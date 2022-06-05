@@ -1,6 +1,8 @@
 # AWS-IOT-LAMBDA
 ## Install
+```
 npm install
+```
 
 
 ## Deploy
