@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES2017",
+      "noImplicitAny": true,
+      "preserveConstEnums": true,
+      "outDir": "./dist",
+      "rootDir": "./",
+      "sourceMap": true,
+    },
+    "include": ["src/**/*", "app.ts"],
+    "exclude": ["node_modules", "**/*.test.ts"]
+  }

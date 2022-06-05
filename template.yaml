@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  aws-iot-lambda
+
+  Sample SAM Template for aws-iot-lambda
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  EnDondeMeVacunoIot:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      Handler: dist/app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+        - x86_64
+      Events:
+        HelloWorld:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /hello
+            Method: get
+
+Outputs:
+  EnDondeMeVacunoIot:
+    Description: "Hello World Lambda Function ARN"
+    Value: "EnDondeMeVacunoIotLambda"
+  EnDondeMeVacunoIotIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt EnDondeMeVacunoIotRole.Arn
